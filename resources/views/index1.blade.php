@@ -146,8 +146,7 @@
                   <p class="lead">
                     My name is Rakesh Basnet. I am an energetic, self-motivated Web Developer with the experience in 
                     web developing, website designing, testing and debugging. I have been 
-                    involved in several projects with group coordination within its deadline. 
-                    I also seek for excellency and I want to achieve it under the influence of your organization.
+                    involved in several projects with group coordination within its deadline.
                   </p>
                   <p class="lead">
                     I have been extensively involved in many projects related to the backend programmeing, which has
