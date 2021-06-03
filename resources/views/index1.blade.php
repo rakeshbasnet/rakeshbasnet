@@ -144,12 +144,12 @@
                     </h5>
                   </div>
                   <p class="lead">
-                    My name is Rakesh Basnet. I am an energetic, self-motivated Web Developer with the experience in 
+                    I am Rakesh Basnet. I am an energetic, self-motivated Web Developer with the experience in 
                     web developing, website designing, testing and debugging. I have been 
                     involved in several projects with group coordination within its deadline.
                   </p>
                   <p class="lead">
-                    I have been extensively involved in many projects related to the backend programmeing, which has
+                    I have been extensively involved in many projects related to the backend programming, which has
                     allowed me to develop strong skills for the backend programming for the websites and applications. My
                     involvement in various projects along with my friends and collegues has allowed me to develop the skill of team work and strong communication as well.
                   </p>
