@@ -1,35 +1,68 @@
-# Hi there, I'm [Your Name]! 
+# Rakesh Basnet
 
-[Short introduction about yourself and your interests](optional)
+## 👨‍💻 DevOps Student | Full Stack Developer | Database Developer
 
-* **What I do:** [Brief description of your skills and experience]
-* **Languages & Tools:** [List of programming languages and tools you're proficient in] (optional)
-* **Projects:**  
-    * [Project 1 name]([link to the project repository]) - [Short description]
-    * [Project 2 name]([link to the project repository]) - [Short description]
-    * ... (add more projects as needed)
-* **Connect with me:**  
-    * [Link to your website] (optional)
-    * [Link to your LinkedIn profile] (optional)
-    * [Link to your Twitter profile] (optional)
-    * ... (add other social media links as needed)
+I am a **DevOps student at Lambton College** with 3 years of professional experience as a **Full Stack Developer** specializing in **Laravel** and **Database Development**. My goal is to transition into a **DevOps Engineer** role, where I can combine my software development background with my passion for automation, CI/CD, and cloud infrastructure.
 
-**Badges** (optional)
+---
 
-[Add badges for your GitHub stats, programming languages, etc. You can generate badges using services like shields.io]
+## 🛠️ Skills & Technologies
 
-**Extras** (optional)
+### DevOps & Cloud
+- **CI/CD Tools:** Jenkins, GitLab CI, GitHub Actions
+- **Containers:** Docker, Kubernetes
+- **Cloud Providers:** AWS, Azure, GCP
+- **Infrastructure as Code (IaC):** Terraform, Ansible
+- **Monitoring & Logging:** Prometheus, Grafana
+- **Version Control:** Git, GitHub, GitLab
 
-* You can add a section showcasing your achievements or contributions to open-source projects.
-* Feel free to include a fun fact about yourself or a quote that inspires you.
+### Web Development
+- **Backend:** Laravel, PHP, Python
+- **Frontend:** Vue.js, React, HTML5, CSS3, JavaScript (ES6+)
+- **Database:** MySQL, PostgreSQL, MongoDB
+- **API Development:** RESTful APIs
 
-**Note:**
+### Databases & System Design
+- **Database Design & Optimization**
+- **Stored Procedures, Triggers, Indexes**
+- **SQL/NoSQL**
 
-* Use emojis to make your profile more visually appealing.
-* Replace the bracketed text with your own information.
+---
 
-**Here are some resources to help you create a great profile README:**
+## 🚀 DevOps Projects
 
-* **GitHub Docs:** https://docs.github.com/articles/about-readmes
-* **Awesome GitHub Profile README:** https://docs.github.com/articles/about-readmes
-* **GitHub Profile Readme Generator:** https://github.com/rahuldkjain/github-profile-readme-generator
+### 1. **CI/CD Pipeline with Jenkins & Docker**
+- Set up a fully automated CI/CD pipeline using Jenkins for a dJango application.
+- Integrated Docker for containerized deployment and used Kubernetes for orchestration.
+- Implemented automated testing and deployment processes for seamless delivery.
+
+### 2. **AWS Cloud Infrastructure Setup**
+- Designed and deployed cloud infrastructure on AWS using Terraform and Ansible.
+- Managed EC2 instances, S3, RDS, and VPC networking.
+- Implemented monitoring with CloudWatch and Prometheus.
+
+### 3. **GitOps with ArgoCD**
+- Configured a GitOps workflow with ArgoCD for Kubernetes-based application deployments.
+- Automated deployment processes based on Git changes for an optimized release cycle.
+
+---
+
+## 💼 Work Experience
+
+### Full Stack/Laravel Developer & Database Developer | (3 Years)
+- Developed scalable web applications using **Laravel** and **Vue.js**.
+- Designed, optimized, and maintained databases for high-performance systems.
+- Collaborated with cross-functional teams on project requirements and delivery.
+
+---
+
+## 🎯 Currently Seeking
+I am currently seeking opportunities as a **DevOps Engineer** where I can apply my experience in development and cloud infrastructure to build scalable and efficient systems.
+
+---
+
+## 📫 Get In Touch
+- **GitHub:** [github.com/rakeshbasnet](https://github.com/rakeshbasnet)
+- **LinkedIn:** [linkedin.com/in/rakeshbasnet](https://linkedin.com/in/rakeshbasnet)
+- **Website:** [rakeshbasnet.com.np](https://rakeshbasnet.com.np/)
+- **Email:** rakeshbasnet086@gmail.com
