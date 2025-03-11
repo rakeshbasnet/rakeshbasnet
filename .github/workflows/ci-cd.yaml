@@ -47,12 +47,12 @@ jobs:
     steps:
       # Debug the commit sha.
       - name: Debug commit SHA
-        run: echo "Commit SHA${{ steps.sha.outputs.commit_sha }}"
+        run: echo "Commit SHA; ${{ needs.build.outputs.commit_sha }}"
 
       # Step 1: Pull the latest Docker image using the commit SHA tag
       - name: Pull Docker image by commit SHA
         run: |
-          docker pull rakeshbasnet/rakeshbasnet:${{ steps.sha.outputs.commit_sha }}
+          docker pull rakeshbasnet/rakeshbasnet:${{ needs.build.outputs.commit_sha }}
 
       # Step 2: Stop and remove any old container
       - name: Stop and remove old container
