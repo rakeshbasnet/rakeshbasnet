@@ -33,7 +33,7 @@ jobs:
         id: sha
         run: echo "::set-output name=commit_sha::$(git rev-parse --short HEAD)"
 
-      # Step 5: Build the Docker image and tag it with the commit SHA
+      # Step 5: Build the Docker image and tag it with the latest commit SHA
       - name: Build and Push Docker image
         run: |
           # Build the Docker image and tag it with the short commit SHA
