@@ -12,6 +12,9 @@ jobs:
   build:
     runs-on: self-hosted  # This runs on your self-hosted runner (VM)
 
+    outputs:
+      commit_sha: ${{ steps.sha.outputs.commit_sha }}  # Define output for commit_sha
+      
     steps:
       # Step 1: Checkout code from GitHub repository
       - name: Checkout code
