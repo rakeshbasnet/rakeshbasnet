@@ -34,11 +34,11 @@ jobs:
         run: echo "::set-output name=commit_sha::$(git rev-parse --short HEAD)"
 
       # Step 5: Build the Docker image and tag it with the latest commit SHA
-      - name: Build and Push Docker image
-        run: |
-          # Build the Docker image and tag it with the short commit SHA
-          docker build -t rakeshbasnet/rakeshbasnet:${{ steps.sha.outputs.commit_sha }} .
-          docker push rakeshbasnet/rakeshbasnet:${{ steps.sha.outputs.commit_sha }}
+      # - name: Build and Push Docker image
+      #   run: |
+      #     # Build the Docker image and tag it with the short commit SHA
+      #     docker build -t rakeshbasnet/rakeshbasnet:${{ steps.sha.outputs.commit_sha }} .
+      #     docker push rakeshbasnet/rakeshbasnet:${{ steps.sha.outputs.commit_sha }}
 
   deploy:
     needs: build  # This job will run after the build job finishes
@@ -50,16 +50,16 @@ jobs:
         run: echo "Commit SHA; ${{ needs.build.outputs.commit_sha }}"
 
       # Step 1: Pull the latest Docker image using the commit SHA tag
-      - name: Pull Docker image by commit SHA
-        run: |
-          docker pull rakeshbasnet/rakeshbasnet:${{ needs.build.outputs.commit_sha }}
+      # - name: Pull Docker image by commit SHA
+      #   run: |
+      #     docker pull rakeshbasnet/rakeshbasnet:${{ needs.build.outputs.commit_sha }}
 
       # Step 2: Stop and remove any old container
-      - name: Stop and remove old container
-        run: |
-          docker ps -q --filter "name=rakeshbasnet" | xargs -r docker stop | xargs -r docker rm
+      # - name: Stop and remove old container
+      #   run: |
+      #     docker ps -q --filter "name=rakeshbasnet" | xargs -r docker stop | xargs -r docker rm
 
       # Step 3: Run the latest Docker image with the commit SHA tag
-      - name: Run Docker container
-        run: |
-          docker run -d --name rakeshbasnet -p 80:3000 rakeshbasnet/rakeshbasnet:${{ steps.sha.outputs.commit_sha }}
+      # - name: Run Docker container
+      #   run: |
+      #     docker run -d --name rakeshbasnet -p 80:3000 rakeshbasnet/rakeshbasnet:${{ needs.build.outputs.commit_sha }}
