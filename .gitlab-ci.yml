@@ -1,0 +1,56 @@
+workflow:         # workflow is used when we want to control the whole pipeline behaviour based on certain conditions.
+  rules:
+    - changes:
+        - "manifests/*"
+      when: never  # Skip the pipeline if only manifests/ changes
+    - when: always  # Otherwise pipeline runs everytime.
+    
+stages:
+  - build
+  - deploy
+  
+variables:
+  IMAGE_NAME: node-app-gitlabci
+  IMAGE_VERSION: ${CI_COMMIT_SHORT_SHA}
+  IMAGE_PATH: rakeshbasnet
+  PIPELINE_RUNNER: vm-linux-runner
+
+build-app:
+  stage: build
+  tags: 
+    - ${PIPELINE_RUNNER}
+  before_script:
+    - docker login -u ${DOCKER_REGISTRY_USER} -p ${DOKCER_REGISTRY_PASSWORD}
+  script:
+    - docker build -t ${IMAGE_PATH}/${IMAGE_NAME}:${IMAGE_VERSION} .
+    - docker push ${IMAGE_PATH}/${IMAGE_NAME}:${IMAGE_VERSION}
+    - docker rmi ${IMAGE_PATH}/${IMAGE_NAME}:${IMAGE_VERSION}
+  
+deploy-app:
+  stage: deploy
+  tags: 
+    - ${PIPELINE_RUNNER}
+  script:
+    - | 
+      echo "Updating deployment.yaml file with latest image tag."
+
+      # Configure Git user
+      git config user.email "rakeshbasnet086@gmail.com"
+      git config user.name "Gitlab CI"
+
+      # Adding remote repository URL with token
+      git remote set-url origin "https://oauth2:${GIT_ACCESS_TOKEN}@gitlab.com/cicd-app/gitlabci-and-argocd-example.git"
+
+      # First checkout to main branch
+      git checkout main
+
+      # Pull the latest changes with merge strategy
+      git pull --no-rebase origin main
+
+      # Update the image tag in the Kubernetes deployment file using sed
+      sed -i "s#image: ${IMAGE_PATH}/${IMAGE_NAME}:.*#image: ${IMAGE_PATH}/${IMAGE_NAME}:${IMAGE_VERSION}#" manifests/deployment.yaml
+
+      # Commit and push the changes to the Git repository
+      git add manifests/deployment.yaml
+      git commit -m "Updated deployment.yaml file with latest image tag: ${CI_COMMIT_SHORT_SHA}"
+      git push origin HEAD:refs/heads/${CI_COMMIT_REF_NAME}

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: portfolio-app-service
+  namespace: portfolio
+spec:
+  selector:
+    app: portfolio-app     # Must match the label in matchLabel part of Deployment
+  ports:
+    - protocol: TCP
+      port: 80            # Port that the service will expose
+      targetPort: 3000    # Port on which the container is listening
+      nodePort: 30080     # Port on each node to expose (this can be any valid port in the range 30000-32767)
+  type: NodePort          # This exposes the service externally using a NodePort

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: portfolio-app-deployment
+  namespace: portfolio
+  labels: 
+    app: portfolio-app
+spec: 
+  replicas: 1  # Number of pods to be run, can be adjusted this number based on requirements
+  selector:
+    matchLabels:
+      app: portfolio-app
+  template:
+    metadata:
+      labels:
+        app: portfolio-app
+        env: dev
+    spec:
+      containers:
+        - name: portfolio-app
+          image: rakeshbasnet/rakeshbasnet
+          ports:
+            - containerPort: 3000       # Port on which application is running inside container.
