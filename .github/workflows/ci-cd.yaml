@@ -48,9 +48,6 @@ jobs:
     runs-on: self-hosted  # Run this on your self-hosted runner (VM)
 
     steps:
-      # Debug the commit sha.
-      - name: Debug commit SHA
-        run: echo "Commit SHA; ${{ needs.build.outputs.commit_sha }}"
 
       # Step 1: Pull the latest Docker image using the commit SHA tag
       - name: Pull Docker image by commit SHA
