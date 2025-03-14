@@ -48,7 +48,6 @@ jobs:
     runs-on: self-hosted  # Run this on your self-hosted runner (VM)
 
     steps:
-
       # Step 1: Pull the latest Docker image using the commit SHA tag
       - name: Pull Docker image by commit SHA
         run: |
